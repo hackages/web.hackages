@@ -1,5 +1,7 @@
 (function(){
   'use strict';
 
-  console.log('app is running');
+
+
+  console.log('app is running only after pushing the code');
 })();
