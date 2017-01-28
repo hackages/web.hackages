@@ -1,0 +1,12 @@
+body{
+	font-family: $ms-reg;
+	background-color: $white;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	.btn:focus, .btn:active, .btn.active, .btn:focus:active {
+	  background-image: none;
+	  outline: none;
+	  -webkit-box-shadow: none;
+	  box-shadow: none;
+	}
+}

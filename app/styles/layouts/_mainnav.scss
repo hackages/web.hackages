@@ -1,0 +1,61 @@
+.mainnav{
+  background-color: $white;
+  border: none;
+  margin-bottom: 0;
+  z-index: 999;
+  &.top{
+    background-color: $teal;
+    .navbar-nav{
+      li{
+        a{
+          color: $white;
+          &:hover{
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+  .navbar-header{
+    .navbar-toggle{
+      margin-top: 18px;
+      margin-bottom: 18px;
+      border: transparent;
+      &:hover,&:focus{
+        background: none;
+      }
+      .icon-bar{
+        background: $white;
+      }
+    }
+    .navbar-brand{
+      content: url('../images/logo_w.svg');
+      height: 40px;
+      box-sizing: content-box;
+      margin-left: 0;
+      @include bp-small{
+        height: 58px;
+        margin-top: 12px;
+      }
+    }
+  }
+  .navbar-collapse{
+    border-top-color: #F1FAF9;
+  }
+  .navbar-nav{
+    @include bp-small{
+      margin-top: 25px;
+    }
+    li{
+      a{
+        color: $teal;
+        font-size: 16px;
+        line-height: 19px;
+        padding: 15px 20px;
+        &:hover{
+          color: $teal;
+        }
+      }
+    }
+  }
+}

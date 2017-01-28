@@ -1,0 +1,121 @@
+.homepage{
+  header{
+    height: 500px;
+    background: $teal;
+    margin-top: -100px;
+    padding-top: 100px;
+    position: relative;
+    &:after{
+      content:'';
+      width: 50px;
+      height: 50px;
+      background: $teal;
+      transform: rotate(45deg);
+      border-radius:0 0 8px 0;
+      position: absolute;
+      bottom: -25px;
+      left: 30%;
+      z-index: 2;
+    }
+    h1{
+      color: $white;
+      font-size: 40px;
+      line-height: 49px;
+      margin-top: 150px;
+      text-align: center;
+    }
+  }
+  h2{
+    font-family: $ms-bold;
+    text-transform: uppercase;
+    font-size: 36px;
+    line-height: 44px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 70px;
+    color: $black;
+  }
+  h3{
+    font-size: 24px;
+    line-height: 29px;
+    font-family: $ms-bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    color: $black;
+  }
+  section{
+    padding: 100px 0 80px;
+    &.services{
+      position: relative;
+      &:after{
+        content:'';
+        width: 50px;
+        height: 50px;
+        background: $white;
+        transform: rotate(45deg);
+        border-radius:0 0 8px 0;
+        position: absolute;
+        bottom: -25px;
+        left: 30%;
+        z-index: 2;
+      }
+      .service{
+        margin-bottom: 40px;
+        @include bp-medium{
+          margin-bottom: 0;
+        }
+        &:last-child{
+          margin-bottom: 0;
+        }
+        .typcn{
+          color: $teal;
+          text-align: center;
+          display: block;
+          font-size: 55px;
+          line-height: 55px;
+          margin-bottom: 20px;
+        }
+        p{
+          font-size: 18px;
+          line-height: 22px;
+          color: $darkgreen;
+          text-align: justify;
+          position: relative;
+          margin-top: 35px;
+          margin-bottom: 0;
+          &:before{
+            content: "...";
+            color: $teal;
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+        .btn{
+          margin-top: 15px;
+        }
+      }
+    }
+    &.works{
+      background: #F1FAF9;
+      position: relative;
+      &:after{
+        content:'';
+        width: 50px;
+        height: 50px;
+        background: #F1FAF9;
+        transform: rotate(45deg);
+        border-radius:0 0 8px 0;
+        position: absolute;
+        bottom: -25px;
+        left: 30%;
+        z-index: 2;
+      }
+    }
+    &.community{
+
+    }
+  }
+}

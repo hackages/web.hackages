@@ -1,0 +1,25 @@
+// $breakpoints
+// If you want to add special mediaqueries directly into item you can use these mixing.
+// ---------------------
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@mixin bp-small {
+	@media (min-width: $screen-sm-min) {
+        @content;
+    }
+}
+/* Medium devices (desktops, 992px and up) */
+@mixin bp-medium {
+    @media (min-width: $screen-md-min) {
+        @content;
+    }
+}
+/* Large devices (large desktops, 1200px and up) */
+@mixin bp-large {
+	@media (min-width: $screen-lg-min ) {
+			@content;
+	}
+}

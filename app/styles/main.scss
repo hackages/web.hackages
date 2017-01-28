@@ -1,0 +1,38 @@
+/***********************\
+  main.scss
+ -----------------------
+ Importing all dependencies and modules.
+\***********************/
+
+
+
+
+/***********************\
+  Imports
+\***********************/
+
+// Vendors
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+
+// Modules
+@import "modules/toolbox";
+@import "modules/typography";
+
+
+// Base
+@import "base/normalize";
+@import "base/variables";
+@import "base/default";
+
+
+// Components
+@import "components/components";
+
+
+// Layouts
+@import "layouts/mainnav";
+@import "layouts/homepage";
+@import "layouts/footer";

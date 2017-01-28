@@ -1,0 +1,133 @@
+///// Import Fonts /////
+
+@font-face {
+    font-family: 'montserratbold';
+    src: url('../fonts/montserrat/montserrat_700-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat/montserrat_700-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserratregular';
+    src: url('../fonts/montserrat/montserrat_regular-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat/montserrat_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+///// Font size /////
+///// Breakpoints for font size ///// *same breakpoints as global breakpoints
+
+$breakpoints: (
+  small : 768px,
+  medium: 992px,
+  large : 1200px,
+);
+
+///// Global font size /////
+//* (font-size, line-height)
+$h1-font-sizes: (
+  null  : (28px, 36px),
+  small : (32px, 40px),
+  medium: (36px, 44px),
+);
+
+$h2-font-sizes: (
+  null  : (15px, 24px),
+  small : (18px, 24px),
+);
+
+$h3-font-sizes: (
+  null  : (18px, 24px),
+  small : (20px, 28px),
+  medium: (24px, 32px),
+);
+
+$h4-font-sizes: (
+  null  : (18px, 24px),
+  medium: (20px, 28px),
+);
+
+$h5-font-sizes: (
+  null  : (20px, 28px),
+  medium : (24px, 32px),
+);
+
+$h6-font-sizes: (
+  null  : (15px, 24px),
+  medium : (18px, 24px),
+);
+
+$p-font-sizes: (
+  null  : (14px, 20px),
+  medium: (15px, 24px),
+);
+
+
+
+///// Card font size /////
+//* (font-size, line-height)
+$h2c-font-sizes: (
+  null  : (24px, 32px),
+);
+
+$h3c-font-sizes: (
+  null  : (18px, 24px),
+);
+
+$pc-font-sizes: (
+  null  : (13px, 20px),
+  medium : (15px, 24px),
+);
+
+$lic-font-sizes: (
+  null  : (13px, 20px),
+  medium : (14px, 20px),
+);
+
+$extra-ribbonc-font-sizes: (
+  null  : (9px, 14px),
+);
+
+
+///// Mixin font size /////
+
+@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      @include make-font-size($fs-font-size);
+    }
+    @else {
+      // If $fs-font-size is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        @include make-font-size($fs-font-size);
+      }
+    }
+  }
+}
+
+
+
+
+// Utility function for mixin font-size
+@mixin make-font-size($fs-font-size) {
+  // If $fs-font-size is a list, include
+  // both font-size and line-height
+  @if type-of($fs-font-size) == "list" {
+    font-size: nth($fs-font-size, 1);
+    @if (length($fs-font-size) > 1) {
+      line-height: nth($fs-font-size, 2);
+    }
+  }
+  @else {
+    font-size: $fs-font-size;
+  }
+}

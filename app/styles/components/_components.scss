@@ -1,0 +1,63 @@
+// button
+.btn{
+  border-radius: $border-rad-gen;
+  font-family: $ms-reg;
+  outline: 0;
+  &.btn-hackages{
+    background-color: $teal-btn;
+    color: $white;
+    transition: 0.2s background-color;
+    &:hover{
+      background-color: $teal-btn-h !important;
+    }
+  }
+  &.medium{
+    font-size: 16px;
+    line-height: 20px;
+    padding: 6px 14px;
+  }
+}
+
+// tile
+.tile{
+  box-shadow: 4px 3px 0 0 #B3E0DC;
+  border-radius: $border-rad-gen;
+  display: block;
+  transition: .2s;
+  padding: 20px 15px;
+  &:hover,&:focus{
+    text-decoration: none;
+    box-shadow: 4px 3px 0 0 $teal;
+  }
+  h4{
+    font-size: 24px;
+    line-height: 29px;
+    color: $black;
+    font-family: $ms-bold;
+    margin: 0;
+    margin-bottom: 7px;
+  }
+  p{
+    margin: 0;
+    &.type{
+      font-size: 14px;
+      line-height: 18px;
+      color: $lgray;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+    &.location,&.date{
+      font-size: 18px;
+      line-height: 22px;
+      color: $darkgreen;
+      text-transform: uppercase;
+    }
+    &.date{
+      font-family: $ms-bold;
+    }
+  }
+  .btn{
+    float: right;
+    margin-top: 80px;
+  }
+}

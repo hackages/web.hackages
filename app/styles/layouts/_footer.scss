@@ -1,0 +1,38 @@
+footer{
+  padding-bottom: 10px;
+  ul{
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+    display: table;
+    margin-right: auto;
+    margin-left: auto;
+    // margin-bottom: 20px;
+    li{
+      position: relative;
+      display: block;
+      float: left;
+      a{
+        padding: 7px 20px;
+        display: block;
+        color: $teal;
+        &:hover, &:focus{
+          text-decoration: none;
+          color: $teal-btn-h;
+        }
+      }
+    }
+  }
+  .copyright{
+    font-size: 12px;
+    line-height: 15px;
+    color: $teal;
+    display: block;
+    text-align: left;
+    margin-top: 20px;
+    padding: 0 20px;
+    @include bp-small{
+      text-align: center;
+    }
+  }
+}
