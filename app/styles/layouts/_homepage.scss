@@ -2,7 +2,6 @@
   header{
     height: 500px;
     background: $teal;
-    margin-top: -100px;
     padding-top: 100px;
     position: relative;
     &:after{
@@ -115,7 +114,55 @@
       }
     }
     &.community{
-
+      [class^=col]{
+        .tile{
+          margin-bottom: 40px;
+          @include bp-medium{
+            margin-bottom: 0;
+          }
+        }
+        &:last-child{
+          .tile{
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    &.newsletter{
+      form{
+        text-align: center;
+        p{
+          font-size: 16px;
+          line-height: 19px;
+          color: $darkgreen;
+          margin: 0;
+          display: inline-block;
+        }
+        .input-body{
+          border-bottom: 2px dashed $teal;
+          display: inline-block;
+          input{
+            font-size: 16px;
+            line-height: 19px;
+            color: $darkgreen;
+            border: none;
+            display: inline-block;
+            outline: 0;
+            font-family: $ms-bold;
+          }
+        }
+        button{
+          color: $teal-btn;
+          background: none;
+          padding: 0;
+          border: 0;
+          font-size: 50px;
+          line-height: 41px;
+          &:hover{
+            color: $teal-btn-h;
+          }
+        }
+      }
     }
   }
 }

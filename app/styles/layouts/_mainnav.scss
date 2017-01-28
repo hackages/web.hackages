@@ -1,5 +1,5 @@
 .mainnav{
-  background-color: $white;
+  background-color: $teal;
   border: none;
   margin-bottom: 0;
   z-index: 999;
@@ -45,15 +45,16 @@
   .navbar-nav{
     @include bp-small{
       margin-top: 25px;
+      margin-right: 0;
     }
     li{
       a{
-        color: $teal;
+        color: $white;
         font-size: 16px;
         line-height: 19px;
         padding: 15px 20px;
         &:hover{
-          color: $teal;
+          color: $white;
         }
       }
     }
