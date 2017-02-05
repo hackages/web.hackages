@@ -3,3 +3,4 @@ bower_components/
 node_modules/
 dist/
 statics/collection/target/
+.DS_Store
