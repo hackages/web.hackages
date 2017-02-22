@@ -1,0 +1,21 @@
+.community{
+  section{
+    padding: 100px 0 80px;
+    &:first-of-type{
+      margin-top: 70px;
+      @include bp-small{
+        margin-top: 100px;
+      }
+      [class^=col]{
+        .tile{
+          margin-bottom: 40px;
+        }
+        &:last-child{
+          .tile{
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
