@@ -1,5 +1,7 @@
-node_modules
-dist
-.tmp
-bower_components
+bower_components/
+.tmp/
+node_modules/
+dist/
+statics/collection/target/
 test/bower_components
+.DS_Store
