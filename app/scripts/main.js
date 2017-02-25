@@ -6,27 +6,27 @@ window.onload = function () {
     var styles = [
       {
         stylers: [
-          { hue: "#00ffe6" },
+          { hue: '#00ffe6' },
           { saturation: -20 }
         ]
       },{
-        featureType: "road",
-        elementType: "geometry",
+        featureType: 'road',
+        elementType: 'geometry',
         stylers: [
           { lightness: 100 },
-          { visibility: "simplified" }
+          { visibility: 'simplified' }
         ]
       },{
-        featureType: "road",
-        elementType: "labels",
+        featureType: 'road',
+        elementType: 'labels',
         stylers: [
-          { visibility: "off" }
+          { visibility: 'off' }
         ]
       }
     ];
 
     var styledMap = new google.maps.StyledMapType(styles,
-      {name: "Styled Map"});
+      {name: 'Styled Map'});
     var myLatlng = new google.maps.LatLng(50.833511, 4.358177);
 
     var mapOptions = {
@@ -46,7 +46,7 @@ window.onload = function () {
     var image = '../images/marker.svg';
     var marker = new google.maps.Marker({
       position: myLatlng,
-      title:"Our Office !",
+      title:'Our Office !',
       icon: image
     });
 
