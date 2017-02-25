@@ -4,6 +4,7 @@ const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync');
 const del = require('del');
 const wiredep = require('wiredep').stream;
+const copy = require('gulp-copy');
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -22,6 +23,14 @@ gulp.task('styles', () => {
     .pipe(gulp.dest('.tmp/styles'))
     .pipe(reload({stream: true}));
 });
+
+
+gulp.task('copy', () => {
+  return gulp
+    .src(['app/CNAME'])
+    .pipe(gulp.dest('dist/'));
+});
+
 
 gulp.task('scripts', () => {
   return gulp.src('app/scripts/**/*.js')
@@ -165,7 +174,7 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
+gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras', 'copy'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
