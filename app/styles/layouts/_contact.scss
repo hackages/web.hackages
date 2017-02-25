@@ -1,0 +1,122 @@
+.contact{
+  section{
+    padding: 100px 0 80px;
+    &:first-of-type{
+      margin-top: 70px;
+      @include bp-small{
+        margin-top: 100px;
+      }
+    }
+    form{
+      text-align: left;
+      p{
+        font-size: 16px;
+        line-height: 24px;
+        color: $darkgreen;
+        margin: 0;
+        display: inline-block;
+        margin-bottom: 5px;
+        &:first-child{
+          display: block;
+          margin-bottom: 30px;
+          font-size: 20px;
+          line-height: 23px;
+        }
+        &:last-of-type{
+          display: block;
+        }
+      }
+      .input-body{
+        border-bottom: 2px dashed $teal;
+        display: inline-block;
+        margin-bottom: 5px;
+        &.name{
+          width: 250px;
+        }
+        &.mail{
+          width: 300px;
+        }
+        &.message{
+          width: 100%;
+          position: relative;
+          &:before, &:after{
+            content:"";
+            display: block;
+            border-bottom: 2px dashed $teal;
+            width: 100%;
+            position: absolute;
+            z-index:200;
+          }
+          &:before{
+            top: 26px;
+          }
+          &:after{
+            top: 55px;
+          }
+        }
+        input, textarea{
+          font-size: 16px;
+          line-height: 19px;
+          color: $darkgreen;
+          border: none;
+          display: inline-block;
+          outline: 0;
+          font-family: $ms-bold;
+          width: 100%;
+        }
+        textarea{
+          box-shadow: none;
+          line-height: 28px;
+          position: relative;
+          z-index: 201;
+          background: transparent;
+          padding: 0;
+        }
+      }
+      button{
+        color: $teal-btn;
+        background: none;
+        padding: 0;
+        border: 0;
+        font-size: 50px;
+        line-height: 41px;
+        margin: 0 auto;
+        display: block;
+        &:hover{
+          color: $teal-btn-h;
+        }
+      }
+    }
+    #map_office{
+      height: 300px;
+      margin-bottom: 30px;
+    }
+    .info{
+      margin: 0;
+  		padding: 0;
+  		list-style: none;
+      li{
+        color: $darkgreen;
+  			font-size: 14px;
+  			line-height: 22px;
+        margin-bottom: 8px;
+        padding-left: 32px;
+        position: relative;
+        a{
+  				color: $darkgreen;
+  				&:hover, &:focus{
+  					color: $darkgreen;
+  				}
+  			}
+        .typcn{
+          font-size: 23px;
+          position: absolute;
+          left: 0px;
+        }
+        .company{
+          font-family: $ms-bold;
+        }
+      }
+    }
+  }
+}

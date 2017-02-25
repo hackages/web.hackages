@@ -25,9 +25,11 @@
   display: block;
   transition: .2s;
   padding: 20px 15px;
+  border: 3px solid transparent;
   &:hover,&:focus{
     text-decoration: none;
-    box-shadow: 4px 3px 0 0 $teal;
+    box-shadow: 4px 3px 0 0 transparent;
+    border: 3px solid #B3E0DC;
   }
   h4{
     font-size: 24px;
