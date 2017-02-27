@@ -1,4 +1,4 @@
-deployement:
+deployment:
   production:
     branch: master
     commands:
