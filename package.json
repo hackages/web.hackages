@@ -4,7 +4,7 @@
     "node": ">=4"
   },
   "scripts": {
-    "predeploy": "gulp build && bower install",
+    "predeploy": "bower install && gulp build",
     "deploy": "surge -p dist/ "
   },
   "devDependencies": {
