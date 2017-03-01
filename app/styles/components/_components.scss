@@ -1,6 +1,6 @@
 // button
 .btn{
-  border-radius: $border-rad-gen;
+  border-radius: $border-rad-btn;
   font-family: $ms-reg;
   outline: 0;
   &.btn-hackages{
@@ -23,6 +23,7 @@
   box-shadow: 4px 3px 0 0 #B3E0DC;
   border-radius: $border-rad-gen;
   display: block;
+  background: $white;
   transition: .2s;
   padding: 20px 15px;
   border: 3px solid transparent;
@@ -61,5 +62,127 @@
   .btn{
     float: right;
     margin-top: 80px;
+  }
+}
+
+// testimonials
+.testimonial{
+  box-shadow: 4px 3px 0 0 #B3E0DC;
+  border-radius: $border-rad-gen;
+  display: block;
+  background: $white;
+  box-sizing: border-box;
+  display: block;
+  padding: 20px 40px 40px;
+  @include bp-small{
+    padding: 20px 100px 40px;
+  }
+  .carousel-indicators{
+    bottom: 10px;
+    left: initial;
+    margin: 0;
+    right: 15px;
+    width: auto;
+    li{
+      border: none;
+      width: 9px;
+      height: 9px;
+      background-color: $teal;
+      margin: 0;
+      margin-left: 4px;
+      opacity: 0.5;
+      &.active{
+        opacity: 1;
+
+      }
+    }
+  }
+  .carousel-control{
+    width: 9%;
+    &.right,&.left{
+      background: none;
+    }
+    &.right{
+      .typcn{
+        right: 50%;
+        transform: translate(50%, -50%);
+      }
+    }
+    &.left{
+      .typcn{
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    .typcn{
+      font-size: 23px;
+      color: $teal;
+      position: absolute;
+      top: 50%;
+      z-index: 5;
+      display: inline-block;
+      text-shadow: none;
+    }
+  }
+  .item{
+    .img-content{
+      height: 85px;
+      width: 85px;
+      overflow: hidden;
+      border-radius: 8px;
+      position: relative;
+      margin: 0 auto;
+      display: block;
+      @include bp-small{
+        display: inline-block;
+      }
+      img{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+      }
+    }
+    .info-content{
+      display: block;
+      vertical-align: super;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      @include bp-small{
+        display: inline-block;
+        margin-left: 10px;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      p{
+        margin: 0;
+        text-align: center;
+        @include bp-small{
+          text-align: left;
+        }
+        &.position{
+          font-size: 10px;
+          line-height: 13px;
+          color: $teal;
+          text-transform: uppercase;
+        }
+        &.name{
+          color: $darkgreen;
+          font-size: 18px;
+          line-height: 22px;
+        }
+      }
+    }
+    >p{
+      margin: 0;
+      margin-top: 5px;
+      color: $darkgreen;
+      font-size: 14px;
+      line-height: 18px;
+      text-align: center;
+      @include bp-small{
+        text-align: left;
+      }
+    }
   }
 }

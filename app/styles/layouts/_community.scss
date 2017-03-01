@@ -19,19 +19,9 @@
         left: 30%;
         z-index: 2;
       }
-      [class^=col]{
-        .tile{
-          margin-bottom: 40px;
-        }
-        &:last-child{
-          .tile{
-            margin-bottom: 0;
-          }
-        }
-      }
     }
     &.group{
-      background: #F1FAF9;
+      background: $white;
       [class^=col]{
         text-align: center;
         margin-bottom: 45px;
@@ -46,6 +36,19 @@
           line-height: 22px;
           color: $darkgreen;
           margin-bottom: 25px;
+        }
+      }
+    }
+    &.events{
+      background: #F1FAF9;
+      [class^=col]{
+        .tile{
+          margin-bottom: 40px;
+        }
+        &:last-child{
+          .tile{
+            margin-bottom: 0;
+          }
         }
       }
     }
