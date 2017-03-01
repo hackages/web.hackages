@@ -30,7 +30,16 @@
   &:hover,&:focus{
     text-decoration: none;
     box-shadow: 4px 3px 0 0 transparent;
-    border: 3px solid #B3E0DC;
+    background: #B3E0DC;
+    // border: 3px solid #B3E0DC;
+    h4{
+      color: $white;
+    }
+    p{
+      &.type,&.location,&.date{
+        color: $white;
+      }
+    }
   }
   h4{
     font-size: 24px;

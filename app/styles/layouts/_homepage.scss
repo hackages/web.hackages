@@ -27,6 +27,87 @@
   }
   section{
     padding: 100px 0 80px;
+    &.collage{
+      position: relative;
+      height: 500px;
+      width: 100%;
+      max-width: inherit;
+      overflow: hidden;
+      padding-top: 0;
+      .photos{
+        position: absolute;
+        height: 100%;
+        width: 5400px;
+        background: transparent url(../images/collage.jpg) repeat-x left top;
+        -moz-transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        -webkit-animation: collage 60s linear infinite;
+        -moz-animation: collage 60s linear infinite;
+        -ms-animation: collage 60s linear infinite;
+        animation: collage 60s linear infinite;
+
+        @-webkit-keyframes collage {
+          0% {
+            -moz-transform: translate3d(0, 0, 0);
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0)
+          }
+
+          100% {
+            -moz-transform: translate3d(-1800px, 0, 0);
+            -webkit-transform: translate3d(-1800px, 0, 0);
+            transform: translate3d(-1800px, 0, 0)
+          }
+        }
+
+        @-moz-keyframes collage {
+          0% {
+            -moz-transform: translate3d(0, 0, 0);
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0)
+          }
+
+          100% {
+            -moz-transform: translate3d(-1800px, 0, 0);
+            -webkit-transform: translate3d(-1800px, 0, 0);
+            transform: translate3d(-1800px, 0, 0)
+          }
+        }
+
+        @-ms-keyframes collage {
+          0% {
+            -moz-transform: translate3d(0, 0, 0);
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0)
+          }
+
+          100% {
+            -moz-transform: translate3d(-1800px, 0, 0);
+            -webkit-transform: translate3d(-1800px, 0, 0);
+            transform: translate3d(-1800px, 0, 0)
+          }
+        }
+
+        @keyframes collage {
+          0% {
+            -moz-transform: translate3d(0, 0, 0);
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0)
+          }
+
+          100% {
+            -moz-transform: translate3d(-1800px, 0, 0);
+            -webkit-transform: translate3d(-1800px, 0, 0);
+            transform: translate3d(-1800px, 0, 0)
+          }
+        }
+        @include bp-small{
+          background-image: url(../images/collage2x.jpg);
+          background-size: 1800px 500px;
+        }
+      }
+    }
     &.services{
       position: relative;
       &:after{
