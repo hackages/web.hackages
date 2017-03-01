@@ -1,0 +1,59 @@
+.services{
+  section{
+    padding: 100px 0 80px;
+    &:first-of-type{
+      margin-top: 70px;
+      position: relative;
+      @include bp-small{
+        margin-top: 100px;
+      }
+      &:after{
+        content:'';
+        width: 50px;
+        height: 50px;
+        background: $white;
+        transform: rotate(45deg);
+        border-radius:0 0 8px 0;
+        position: absolute;
+        bottom: -25px;
+        left: 30%;
+        z-index: 2;
+      }
+    }
+    &.dev-tools{
+      background: #F1FAF9;
+      position: relative;
+      &:after{
+        content:'';
+        width: 50px;
+        height: 50px;
+        background: #F1FAF9;
+        transform: rotate(45deg);
+        border-radius:0 0 8px 0;
+        position: absolute;
+        bottom: -25px;
+        left: 30%;
+        z-index: 2;
+      }
+    }
+    &.training{
+      position: relative;
+      &:after{
+        content:'';
+        width: 50px;
+        height: 50px;
+        background: $white;
+        transform: rotate(45deg);
+        border-radius:0 0 8px 0;
+        position: absolute;
+        bottom: -25px;
+        left: 30%;
+        z-index: 2;
+      }
+    }
+    &.software-experts{
+      background: #F1FAF9;
+      position: relative;
+    }
+  }
+}
