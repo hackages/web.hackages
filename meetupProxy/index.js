@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { flatten, timestampToDateString as dateString } from './libs/utils';
+import { flatten, timestampToDateString as dateString, firstEvents } from './libs/utils';
 import meetup from './libs/meetup';
 
 import config from './config/config';
@@ -12,10 +12,11 @@ app.use((req, res, next) => {
 });
 
 app.get('/events', (req, res) => {
-  meetup(config.groups)
-  .then(results => {
+  meetup(config.groups).then(results => {
     results = flatten(results);
-     res.json(results.map(e => {
+    const first3Events = firstEvents(results);
+    
+    res.json(first3Events.map(e => {
       const {name, venue: {city}, group: {name: groupName}, time, event_url} = e;
         return {
           name,

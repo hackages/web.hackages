@@ -3,6 +3,7 @@ module.exports = {
     "javascript-lab-amsterdam",
     "javascript-lab-belgium",
     "ReactJS-Belgium",
-    "jsbe-io"
+    "jsbe-io",
+    "formation-programmation"
   ]
 };
