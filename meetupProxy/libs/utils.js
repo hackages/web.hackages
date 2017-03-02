@@ -1,6 +1,10 @@
 export function flatten(array){
     const concat = [];
-    array.map(e => e.length > 0 ? concat.push(...e) : null);
+    array.map(e => {
+      if(e){
+       return e.length > 0 ? concat.push(...e) : null
+      }
+    });
     return concat;
 }
 

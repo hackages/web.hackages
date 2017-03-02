@@ -1,6 +1,6 @@
-const app = document.getElementById('mount-point');
+const appEvents = document.getElementById('mount-point');
 
-function createMarkup(events){
+function createMarkup1(events){
   return '<div class="col-md-3 col-sm-4">'+ 
           '<a href="#" class="tile">'+ 
             '<h4>'+events.name+'</h4>'+
@@ -12,7 +12,7 @@ function createMarkup(events){
         '</div>';
 }
 
-function renderMarkup(el, markup){
+function renderMarkup1(el, markup){
   el.innerHTML = markup;
 }
 
@@ -20,9 +20,10 @@ function renderMarkup(el, markup){
 // Please dont fire me,
 // Gulp wouldnt build unless I used var here
 $.get('http://calapez.me/events', function(data){
-  var htmlMarkup = '';
+  console.log(data);
+  var htmlMarkup1 = '';
   for(var i=0; i<data.length; ++i){
-    htmlMarkup += createMarkup(data[i]);
+    htmlMarkup1 += createMarkup1(data[i]);
   }
-  renderMarkup(app, htmlMarkup);
+  renderMarkup1(appEvents, htmlMarkup1);
 });
