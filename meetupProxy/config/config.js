@@ -14,7 +14,8 @@ module.exports = {
     "ReactJS-Belgium",
     "Tech-Academy-for-Business-Minds",
     "Angular-Belgium",
-    "jsbe-io"
+    "jsbe-io",
+    "Expat-Club"
   ],
   key: keys[1].key
 };

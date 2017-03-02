@@ -29,13 +29,20 @@ app.get('/groups', (req, res) => {
   });
 });
 
-app.get('/events', (req, res) => {
+app.get('/events/:all?', (req, res) => {
   meetup(config.groups).then(results => {
     results = flatten(results);
-    const first3Events = firstEvents(results);
+    console.log(req.params);
+    if(!req.params.all){
+      results = firstEvents(results);
+    }
     
-    res.json(first3Events.map(e => {
-      const {name, venue: {city}, group: {name: groupName}, time, event_url} = e;
+    res.json(results.map(e => {
+      let city = '';
+      if(e.venue){
+        city = e.venue.city;
+      }
+      const {name, group: {name: groupName}, time, event_url} = e;
         return {
           name,
           city,
