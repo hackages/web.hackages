@@ -2,6 +2,7 @@
 window.onload = function () {
   initMap();
 
+
   function initMap() {
     var styles = [
       {
