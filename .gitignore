@@ -5,3 +5,4 @@ dist/
 statics/collection/target/
 test/bower_components
 .DS_Store
+dist

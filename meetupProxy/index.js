@@ -1,9 +1,9 @@
-const express = require('express');
+import express from 'express';
 
-const flatten = require('./libs/utils').flatten;
-const dateString = require('./libs/utils').timestampToDateString;
-const config = require('./config/config');
-const meetup = require('./libs/meetup');
+import { flatten, timestampToDateString as dateString } from './libs/utils';
+import meetup from './libs/meetup';
+
+import config from './config/config';
 
 const app = express();
 app.use((req, res, next) => { 
@@ -12,15 +12,15 @@ app.use((req, res, next) => {
 });
 
 app.get('/events', (req, res) => {
-  console.log('Got a new request');
   meetup(config.groups)
   .then(results => {
     results = flatten(results);
      res.json(results.map(e => {
-      const {name, venue: {city}, group: {name: groupName}, time} = e;
+      const {name, venue: {city}, group: {name: groupName}, time, event_url} = e;
         return {
           name,
           city,
+          event_url,
           groupName,
           time,
           formatedTime: dateString(time)

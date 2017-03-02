@@ -12,7 +12,7 @@ const fetchEvent = (group = "ReactJS-Belgium") => {
   });
 };
 
-module.exports = fetchEvents = (groups = []) => {
+export default function fetchEvents(groups = []){
   const promises = groups.map(group => fetchEvent(group));
   return Promise.all(promises);
 };
