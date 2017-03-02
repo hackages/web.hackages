@@ -16,7 +16,10 @@ function renderMarkup(el, markup){
   el.innerHTML = markup;
 }
 
-$.get('http://localhost:4200/events', function(data){
+// I know, this is not what it looks like,
+// Please dont fire me,
+// Gulp wouldnt build unless I used var here
+$.get('http://calapez.me/events', function(data){
   var htmlMarkup = '';
   for(var i=0; i<data.length; ++i){
     htmlMarkup += createMarkup(data[i]);

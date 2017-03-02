@@ -7,7 +7,10 @@
     "watch": "nodemon index.js --exec babel-node --presets es2015,stage-2",
     "prebuild": "rm -rf ./build",
     "build": "babel **/*.js -d dist --presets es2015,stage-2",
-    "serve": "node dist/index.js"
+    "preserve": "yarn install",
+    "serve": "node dist/index.js",
+    "predeploy": "yarn build",
+    "deploy": "bash deploy.sh"
   },
   "dependencies": {
     "express": "^4.15.0",
