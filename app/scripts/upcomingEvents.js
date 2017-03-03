@@ -19,8 +19,7 @@ function renderMarkup1(el, markup){
 // I know, this is not what it looks like,
 // Please dont fire me,
 // Gulp wouldnt build unless I used var here
-$.get('http://calapez.me/events', function(data){
-  console.log(data);
+$.get('http://web-hackages.herokuapp.com/events/3', function(data){
   var htmlMarkup1 = '';
   for(var i=0; i<data.length; ++i){
     htmlMarkup1 += createMarkup1(data[i]);
