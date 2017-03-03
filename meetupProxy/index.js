@@ -1,12 +1,18 @@
 import express from 'express';
+// import Cache from 'express-redis-cache';
 
 import { timestampToDateString as dateString, firstEvents } from './libs/utils';
 import { fetchEvents, fetchGroups } from './libs/meetup';
 
 import config from './config/config';
 
+// const cache = Cache({
+//   host: config.redisUrl,
+// });
+
 const app = express();
 app.use((req, res, next) => {
+  // cache.route();
   res.header('Access-Control-Allow-Origin', '*');
   next();
 });

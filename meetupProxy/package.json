@@ -12,13 +12,14 @@
     "i": "npm install",
     "preserve": "npm-run-all i build",
     "serve": "node dist/index.js",
-    "start": "npm run serve",
-    "predeploy": "npm run build",
+    "start": "yarn serve",
+    "predeploy": "yarn build",
     "deploy": "bash deploy.sh",
-    "precommit": "npm run lint"
+    "precommit": "yarn lint"
   },
   "dependencies": {
     "express": "^4.15.0",
+    "express-redis-cache": "^0.5.0",
     "isomorphic-fetch": "^2.2.1",
     "npm-run-all": "^4.0.2"
   },
