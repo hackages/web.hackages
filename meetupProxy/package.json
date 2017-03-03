@@ -4,17 +4,18 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "watch": "port=5000 MEETUP_API_KEY=76b2d44622a111e6ba163c534d125c host=localhost nodemon index.js --exec babel-node --presets es2015,stage-2",
+    "watch": "port=5000 host=localhost nodemon index.js --exec babel-node --presets es2015,stage-2",
     "clean": "rm -rf ./dist",
     "lint": "eslint {index.js,libs/**/*.js,config/**/*.js}",
     "prebuild": "npm-run-all lint clean",
     "build": "babel {index.js,**/*.js} -d dist --presets es2015,stage-2",
-    "i": "yarn install",
+    "i": "npm install",
     "preserve": "npm-run-all i build",
     "serve": "node dist/index.js",
-    "predeploy": "yarn build",
+    "start": "npm run serve",
+    "predeploy": "npm run build",
     "deploy": "bash deploy.sh",
-    "precommit": "yarn lint"
+    "precommit": "npm run lint"
   },
   "dependencies": {
     "express": "^4.15.0",
