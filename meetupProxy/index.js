@@ -7,13 +7,9 @@ import { fetchEvents, fetchGroups } from './libs/meetup';
 
 import config from './config/config';
 
-console.log();
-
 const cache = Cache({
   client: redis.createClient(process.env.REDIS_URL),
 });
-
-console.log(redis);
 
 const app = express();
 app.use((req, res, next) => {
