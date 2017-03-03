@@ -13,7 +13,8 @@
     "preserve": "npm-run-all i build",
     "serve": "node dist/index.js",
     "predeploy": "yarn build",
-    "deploy": "bash deploy.sh"
+    "deploy": "bash deploy.sh",
+    "precommit": "yarn lint"
   },
   "dependencies": {
     "express": "^4.15.0",
@@ -28,6 +29,7 @@
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.0"
+    "eslint-plugin-react": "^6.10.0",
+    "husky": "^0.13.2"
   }
 }
