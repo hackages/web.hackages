@@ -1,28 +1,14 @@
-export function flatten(array){
-    const concat = [];
-    array.map(e => {
-      if(e){
-       return e.length > 0 ? concat.push(...e) : null
-      }
-    });
-    return concat;
-}
+export const flatten = array => array.reduce((acc, next) => [...acc, ...next]);
 
-const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+const formatHour = hour => hour > 12 ? `${hour - 12}PM` : `${hour}AM`;
 
-export function timestampToDateString(timestamp){
-  const date = new Date(timestamp);
-  const month = monthNames[date.getMonth()];
-  const day = date.getDate();
-  const hour = formatHour(date.getHours());
-  return `${day} ${month} ${hour}`;
-}
+const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
 
-function formatHour(hour){
-  return hour > 12 ? hour - 12 + "PM" : hour + "AM";
-}
+export const timestampToDateString = timestamp =>
+  [new Date(timestamp)]
+    .map(d => ({ day: d.getDate(), month: months[d.getMonth()], hour: formatHour(d.getHours()) }))
+    .map(({ day, month, hour }) => `${day} ${month} ${hour}`).join();
 
-export function firstEvents(events, n = 3){
-  events.sort((a, b) => a.time - b.time);
-  return events.slice(0, 3);
-}
+export const sortByDate = objects => [...objects].sort((a, b) => a.time - b.time);
+
+export const firstEvents = (objects, n = 3) => objects.slice(0, n);

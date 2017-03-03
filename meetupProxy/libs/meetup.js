@@ -1,28 +1,25 @@
-const fetch = require('isomorphic-fetch');
-import config from '../config/config'
+import fetch from 'isomorphic-fetch';
+import config from '../config/config';
+import { flatten } from './utils';
 
-const getUrl = (urlName = "ReactJS-Belgium") => {
-  return `https://api.meetup.com/2/events?offset=0&format=json&limited_events=False&group_urlname=${urlName}&photo-host=public&page=20&fields=&order=time&desc=false&status=upcoming`;
-};
+const BASE_URL = 'https://api.meetup.com/2/';
 
-const getUrlGroup = (urlName = "ReactJS-Belgium") => {
-  return `https://api.meetup.com/2/groups?offset=0&format=json&group_urlname=${urlName}&photo-host=public&page=20&radius=25.0&fields=&order=id&desc=false&key=${config.key}`;
-}
+const getEventUrl = (urlName = 'ReactJS-Belgium') =>
+  `${BASE_URL}events?offset=0&format=json&limited_events=False&group_urlname=${urlName}&photo-host=public&page=20&fields=&order=time&desc=false&status=upcoming`;
 
-const Fetch = (url = getUrl("ReactJS-Belgium")) => {
-  return new Promise((resolve) => {
+const getGroupUrl = (urlName = 'ReactJS-Belgium') =>
+  `${BASE_URL}groups?offset=0&format=json&group_urlname=${urlName}&photo-host=public&page=20&radius=25.0&fields=&order=id&desc=false&key=${config.key}`;
+
+const Fetch = (url = getGroupUrl('ReactJS-Belgium')) =>
+  new Promise((resolve) => {
     fetch(url)
       .then(res => res.json())
-      .then(({results}) => resolve(results));
+      .then(({ results }) => resolve(results || []))
+      .catch(() => resolve([]));
   });
-};
 
-export function fetchGroups(groups = []){
-  const promises = groups.map(group => Fetch(getUrlGroup(group)));
-  return Promise.all(promises);
-}
+const getAll = (urlFonction, objects) =>
+  Promise.all(objects.map(obj => Fetch(urlFonction(obj)))).then(results => flatten(results));
 
-export default function fetchEvents(groups = []){
-  const promises = groups.map(group => Fetch(getUrl(group)));
-  return Promise.all(promises);
-};
+export const fetchGroups = (groups = []) => getAll(getGroupUrl, groups);
+export const fetchEvents = (groups = []) => getAll(getEventUrl, groups);
