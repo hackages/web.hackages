@@ -1,18 +1,23 @@
 import express from 'express';
-// import Cache from 'express-redis-cache';
+import Cache from 'express-redis-cache';
+import redis from 'redis';
 
 import { timestampToDateString as dateString, firstEvents } from './libs/utils';
 import { fetchEvents, fetchGroups } from './libs/meetup';
 
 import config from './config/config';
 
-// const cache = Cache({
-//   host: config.redisUrl,
-// });
+console.log();
+
+const cache = Cache({
+  client: redis.createClient(process.env.REDIS_URL),
+});
+
+console.log(redis);
 
 const app = express();
 app.use((req, res, next) => {
-  // cache.route();
+  cache.route();
   res.header('Access-Control-Allow-Origin', '*');
   next();
 });
@@ -54,6 +59,6 @@ app.get('/events/:numberOfEvents?', (req, res) => {
   });
 });
 
-app.listen(config.port, config.host, () => {
+app.listen(process.env.PORT, () => {
   console.log(`Server up and running at ${config.host}:${config.port}`);
 });

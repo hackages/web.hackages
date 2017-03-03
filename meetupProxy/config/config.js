@@ -10,7 +10,7 @@ export default {
     'Expat-Club',
   ],
   key: process.env.MEETUP_API_KEY || 'Please provide ENV.MEETUP_API_KEY',
-  host: process.env.host || 'localhost',
-  port: process.env.port || 4200,
+  host: process.env.HOST || 'localhost',
+  port: process.env.PORT || 4200,
   redisUrl: process.env.REDIS_URL || 'Pleace provie ENV.REDIS_URL',
 };
