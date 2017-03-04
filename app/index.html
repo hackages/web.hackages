@@ -9,6 +9,7 @@
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/typicons.font/src/font/typicons.css" />
     <link rel="stylesheet" href="/bower_components/typicons.font/src/font/typicons.min.css" />
     <!-- endbower -->
     <!-- endbuild -->
@@ -109,7 +110,7 @@
         <h2>Community</h2>
         <h3>Next Events</h3>
         <div class="row">
-          <div class="col-md-offset-3 col-md-3 col-sm-offset-2 col-sm-4">
+          <!--div class="col-md-offset-3 col-md-3 col-sm-offset-2 col-sm-4">
             <a href="#" class="tile">
               <h4>Typescript</h4>
               <p class="type">Hackjam</p>
@@ -128,7 +129,8 @@
               <button class="btn btn-hackages medium">Join us</button>
               <div class="clearfix"></div>
             </a>
-          </div>
+          </div-->
+          <div id="mount-point"></div>
         </div>
       </div>
     </section>
@@ -247,6 +249,7 @@
     <!-- endbuild -->
 
     <!-- build:js scripts/main.js -->
+    <script src="scripts/upcomingEvents.js"></script>
     <!-- <script src="scripts/main.js"></script> -->
     <!-- endbuild -->
   </body>
