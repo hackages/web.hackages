@@ -1,8 +1,8 @@
 const appEvents = document.getElementById('mount-point');
 
 function createMarkup1(events){
-  return '<div class="col-md-3 col-sm-4">'+ 
-          '<a href="#" class="tile">'+ 
+  return '<div class="col-lg-3 col-sm-4">'+ 
+          '<a href="#" class="tile">'+
             '<h4>'+events.name+'</h4>'+
             '<p class="type">'+events.groupName+'</p>'+
             '<p class="location">'+events.city+'</p>'+

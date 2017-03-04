@@ -1,7 +1,7 @@
 const app = document.getElementById('groups-app');
 
 function createMarkup(events){
-  return '<div class="col-sm-4 col-md-3">'+
+  return '<div class="col-xs-6 col-sm-4 col-lg-3">'+
           '<img width="80" class="img-responsive" src="'+events.thumb+'" alt="">'+
           '<p>'+events.name+'</p>'+
           '<a href="'+events.link+'" target="_blank" class="btn btn-hackages medium">Join it</a>'+
